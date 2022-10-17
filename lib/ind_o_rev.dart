@@ -27,7 +27,7 @@ class IndepOrangeRev extends StatelessWidget {
           );
         },
 
-        child: Text("На д/с"),
+        child: Icon(Icons.home),
       ),
     );
   }
