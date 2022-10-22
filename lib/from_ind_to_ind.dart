@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import "package:ukraine_music/homepage.dart";
-import "package:ukraine_music/prerequisite.dart";
+import 'package:ukraine_music/homepage.dart';
 
-String text_preres = "";
-
-class Prerequisite extends StatelessWidget {
-  const Prerequisite({Key? key}) : super(key: key);
+class FromIndToInd extends StatelessWidget {
+  const FromIndToInd({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Передумова"),
+        title: Text("2004-2014"),
         backgroundColor: Colors.orangeAccent,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.all(10),
-            child: Text(text_preres),
+            child: Text(""),
           ),
         ],
       ),
@@ -33,7 +29,6 @@ class Prerequisite extends StatelessWidget {
         },
         backgroundColor: Colors.orangeAccent,
         child: Icon(Icons.home),
-
       ),
     );
   }

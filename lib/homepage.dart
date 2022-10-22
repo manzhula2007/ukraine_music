@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ukraine_music/ind_o_rev.dart';
 import 'package:ukraine_music/prerequisite.dart';
+import 'package:ukraine_music/from_ind_to_ind.dart';
+import 'package:ukraine_music/from_ind_to_our_time.dart';
+import 'package:ukraine_music/information.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -9,7 +12,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Українська музика з Незалежності"),
+        title: Text("Українська музика з часів Незалежності"),
         backgroundColor: Colors.orangeAccent,
       ),
 
@@ -17,8 +20,8 @@ class Homepage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         primary: false,
         padding: const EdgeInsets.all(20),
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
+        crossAxisSpacing: 0,
+        mainAxisSpacing: 0,
         crossAxisCount: 2,
         children: <Widget>[
         ElevatedButton(
@@ -34,7 +37,7 @@ class Homepage extends StatelessWidget {
               backgroundColor: Colors.blue, // background (button) color
               foregroundColor: Colors.black, // foreground (text) color
             ),
-              child: Text("Що було до незалежності")
+              child: Text("Передумова")
           ),
           ElevatedButton(
             onPressed: () {
@@ -51,7 +54,13 @@ class Homepage extends StatelessWidget {
             child: Text("Українська музика з початку незалежності(1991) - помаранчева революція(2004)")
         ),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const FromIndToInd(),
+                  ),
+                );
+              },
               child: Text("2004 - 2014"),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow, // background (button) color
@@ -59,7 +68,13 @@ class Homepage extends StatelessWidget {
               ),
         ),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const FromIndToOurTime(),
+                  ),
+                );
+              },
               child: Text("2014"),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow, // background (button) color
@@ -68,43 +83,18 @@ class Homepage extends StatelessWidget {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const Information(),
+            ),
+          );
+        },
+        backgroundColor: Colors.orangeAccent,
+        child: Icon(Icons.perm_device_information),
 
-
-
-
-
-
-
-
-
-
-
-
-      // body: Column(
-      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //   children: [
-      //     ElevatedButton(
-      //         onPressed: () {
-      //           Navigator.of(context).push(
-      //             MaterialPageRoute(
-      //               builder: (context) => const Prerequisite(),
-      //             ),
-      //           );
-      //         },
-      //         child: Text("Що було до незалежності")
-      //     ),
-      //     ElevatedButton(
-      //         onPressed: () {
-      //           Navigator.of(context).push(
-      //             MaterialPageRoute(
-      //                 builder: (context) => const IndepOrangeRev(),
-      //             ),
-      //           );
-      //     },
-      //         child: Text("Українська музика з початку незалежності(1991) - помаранчева революція(2004)")
-      //     ),
-      //   ],
-      // ),
+      ),
     );
   }
 }
