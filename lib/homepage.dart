@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ukraine_music/ind_o_rev.dart';
-import 'package:ukraine_music/prerequisite.dart';
-import 'package:ukraine_music/from_ind_to_ind.dart';
-import 'package:ukraine_music/from_ind_to_our_time.dart';
+import 'package:ukraine_music/revol.dart';
+import 'package:ukraine_music/independence.dart';
+import 'package:ukraine_music/orange_rev.dart';
+import 'package:ukraine_music/war.dart';
 import 'package:ukraine_music/information.dart';
 
 class Homepage extends StatelessWidget {
@@ -28,7 +28,7 @@ class Homepage extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const Prerequisite(),
+                    builder: (context) => const Independence(),
                   ),
                 );
               },
@@ -37,13 +37,13 @@ class Homepage extends StatelessWidget {
               backgroundColor: Colors.blue, // background (button) color
               foregroundColor: Colors.black, // foreground (text) color
             ),
-              child: Text("Передумова")
+              child: Text("Незалежність")
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                    builder: (context) => const IndepOrangeRev(),
+                    builder: (context) => const OrangeRevolution(),
                 ),
               );
             },
@@ -51,17 +51,17 @@ class Homepage extends StatelessWidget {
                 backgroundColor: Colors.blue, // background (button) color
                 foregroundColor: Colors.black, // foreground (text) color
               ),
-            child: Text("Українська музика з початку незалежності(1991) - помаранчева революція(2004)")
+            child: Text("Помаранчева революція")
         ),
           ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const FromIndToInd(),
+                    builder: (context) => const RevolutionOfDignity(),
                   ),
                 );
               },
-              child: Text("2004 - 2014"),
+              child: Text("Революція Гідності"),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow, // background (button) color
                 foregroundColor: Colors.black, // foreground (text) color
@@ -71,11 +71,11 @@ class Homepage extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const FromIndToOurTime(),
+                    builder: (context) => const WarOurTime(),
                   ),
                 );
               },
-              child: Text("2014"),
+              child: Text("Війна 2022"),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow, // background (button) color
                 foregroundColor: Colors.black, // foreground (text) color

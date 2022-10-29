@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ukraine_music/homepage.dart';
 
-class FromIndToInd extends StatelessWidget {
-  const FromIndToInd({Key? key}) : super(key: key);
+class WarOurTime extends StatelessWidget {
+  const WarOurTime({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("2004-2014"),
+        title: Text("Війна 2022"),
         backgroundColor: Colors.orangeAccent,
       ),
       body: Column(
@@ -29,6 +29,7 @@ class FromIndToInd extends StatelessWidget {
         },
         backgroundColor: Colors.orangeAccent,
         child: Icon(Icons.home),
+
       ),
     );
   }

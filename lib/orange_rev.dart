@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ukraine_music/homepage.dart';
 
-class FromIndToOurTime extends StatelessWidget {
-  const FromIndToOurTime({Key? key}) : super(key: key);
+class OrangeRevolution extends StatelessWidget {
+  const OrangeRevolution({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("2014-2022"),
+        title: Text("Помаранчева революція"),
         backgroundColor: Colors.orangeAccent,
       ),
       body: Column(
@@ -29,7 +29,6 @@ class FromIndToOurTime extends StatelessWidget {
         },
         backgroundColor: Colors.orangeAccent,
         child: Icon(Icons.home),
-
       ),
     );
   }

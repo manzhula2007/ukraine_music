@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ukraine_music/homepage.dart';
 
+String info_text = "Цей додаток розповідає про українську музику з 90-х(початку незалежності). Розповідь поділена на 4 пункти."
+    "Після кожного тексту ви можете продивитися відео.";
+
 class Information extends StatelessWidget {
   const Information({Key? key}) : super(key: key);
 
@@ -15,7 +18,7 @@ class Information extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.all(10),
-            child: Text(""),
+            child: Text(info_text),
           ),
         ],
       ),
