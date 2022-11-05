@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ukraine_music">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
         android:label="ukraine_music"
         android:name="${applicationName}"
