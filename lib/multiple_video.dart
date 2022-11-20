@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-// void main() => runApp(MaterialApp(
-//   home: Youtube(),
-// ));
 
 class Youtube extends StatefulWidget {
   const Youtube({Key? key}) : super(key: key);
@@ -28,8 +25,11 @@ class _YoutubeState extends State<Youtube> {
         autoPlay: false,
       ),
     ),
-  )
-      .toList();
+  ).toList();
+
+  makeGetRequest() async { // NOT  PRIVATE(NO _)
+    print(_controllers[0]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +51,7 @@ class _YoutubeState extends State<Youtube> {
                   RemainingDuration(),
                   FullScreenButton(),
                 ],
+
             );
           },
           separatorBuilder: (context, _) => const SizedBox(height: 10.0),

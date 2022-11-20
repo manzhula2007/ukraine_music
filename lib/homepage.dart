@@ -3,7 +3,7 @@ import 'package:ukraine_music/revol.dart';
 import 'package:ukraine_music/independence.dart';
 import 'package:ukraine_music/orange_rev.dart';
 import 'package:ukraine_music/war.dart';
-import 'package:ukraine_music/information.dart';
+import 'package:ukraine_music/more_music.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -12,8 +12,8 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Українська музика з часів Незалежності"),
-        backgroundColor: Colors.orangeAccent,
+        title: Text("Українська музика"),
+        backgroundColor: Colors.blue,
       ),
 
       body: GridView.count(
@@ -87,12 +87,12 @@ class Homepage extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const Information(),
+              builder: (context) => const More(),
             ),
           );
         },
-        backgroundColor: Colors.orangeAccent,
-        child: Icon(Icons.perm_device_information),
+        backgroundColor: Colors.green,
+        child: Icon(Icons.arrow_circle_right),
 
       ),
     );
