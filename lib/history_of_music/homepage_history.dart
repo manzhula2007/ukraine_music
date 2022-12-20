@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ukraine_music/revol.dart';
-import 'package:ukraine_music/independence.dart';
-import 'package:ukraine_music/orange_rev.dart';
-import 'package:ukraine_music/war.dart';
-import 'package:ukraine_music/more_music.dart';
+import 'package:ukraine_music/history_of_music/revol.dart';
+import 'package:ukraine_music/history_of_music/independence.dart';
+import 'package:ukraine_music/history_of_music/orange_rev.dart';
+import 'package:ukraine_music/history_of_music/war.dart';
+import 'package:ukraine_music/history_of_music/more_music.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -12,18 +12,43 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Українська музика"),
+        title: Row(mainAxisAlignment: MainAxisAlignment.start, children: [Text("Українська музика")]),
         backgroundColor: Colors.blue,
       ),
-
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            SizedBox(
+              height: 63.55,
+              child: DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Меню",
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: GridView.count(
         scrollDirection: Axis.vertical,
-        primary: false,
-        padding: const EdgeInsets.all(20),
+        // primary: false,
+        padding: EdgeInsets.all(20),
         crossAxisSpacing: 0,
         mainAxisSpacing: 0,
         crossAxisCount: 2,
-        children: <Widget>[
+        children: [
         ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
@@ -65,6 +90,7 @@ class Homepage extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow, // background (button) color
                 foregroundColor: Colors.black, // foreground (text) color
+
               ),
         ),
           ElevatedButton(
@@ -80,7 +106,7 @@ class Homepage extends StatelessWidget {
                 backgroundColor: Colors.yellow, // background (button) color
                 foregroundColor: Colors.black, // foreground (text) color
             ),
-          )
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -91,10 +117,13 @@ class Homepage extends StatelessWidget {
             ),
           );
         },
+        // backgroundColor: Colors.blueAccent,
+        // child: Icon(Icons.supervised_user_circle),
         backgroundColor: Colors.green,
         child: Icon(Icons.arrow_circle_right),
-
       ),
+      // backgroundColor: Colors.,
     );
   }
 }
+

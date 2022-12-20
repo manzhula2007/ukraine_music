@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "package:ukraine_music/homepage.dart";
+import 'package:ukraine_music/history_of_music/homepage_history.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 // хіт-парад 'Територія А'
@@ -21,7 +21,6 @@ class Independence extends StatefulWidget {
 class _IndependenceState extends State<Independence> {
 
   final videoURL = "https://www.youtube.com/watch?v=YMx8Bbev6T4";
-
   late YoutubePlayerController _controller;
 
   @override
@@ -41,6 +40,21 @@ class _IndependenceState extends State<Independence> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: TextButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const Homepage(),
+              ),
+            );
+          },
+          style: TextButton.styleFrom(
+            side: BorderSide(width:1, color:Colors.black45),
+            backgroundColor: Colors.yellow, // background (button) color
+            foregroundColor: Colors.blue, // foreground (text) color
+          ),
+          child: Icon(Icons.home),
+        ),
         title: Text("Незалежність"),
         backgroundColor: Colors.yellow,
         foregroundColor: Colors.blue,
@@ -61,7 +75,7 @@ class _IndependenceState extends State<Independence> {
                   ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(5, 5, 5, 0),
-                    child: Text(text_indep),
+                    child: Text(text_indep, style: TextStyle(fontSize: 15),),
                   ),
                   Padding(
                       padding: EdgeInsets.fromLTRB(2, 0, 2, 2),
@@ -80,17 +94,18 @@ class _IndependenceState extends State<Independence> {
           separatorBuilder: (context, _) => const SizedBox(height: 10.0),
           itemCount: 1
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const Homepage(),
-            ),
-          );
-        },
-        backgroundColor: Colors.yellow,
-        child: Icon(Icons.home),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.of(context).push(
+      //       MaterialPageRoute(
+      //         builder: (context) => const Homepage(),
+      //       ),
+      //     );
+      //   },
+      //   backgroundColor: Colors.yellow,
+      //   child: Icon(Icons.home),
+      // ),
+      // backgroundColor: Colors.grey,
     );
   }
 }

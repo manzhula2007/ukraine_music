@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ukraine_music/homepage.dart';
+import 'package:ukraine_music/history_of_music/homepage_history.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
-String more_text = "Тут показуються важливі пісні, які не ввійшли в тескт: \n"
-    "\n"
-    "2004 року співачка Руслана з піснею 'Wild Dances' здобуває перемогу На Євробаченні:";
+String more_text = "2004 року співачка Руслана з піснею 'Wild Dances' здобуває перемогу На Євробаченні:";
 
 List list_more_text = [
   more_text,
@@ -38,6 +36,21 @@ class _MoreState extends State<More> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: TextButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const Homepage(),
+              ),
+            );
+          },
+          style: TextButton.styleFrom(
+            side: BorderSide(width:1, color:Colors.black45),
+            backgroundColor: Colors.green, // background (button) color
+            foregroundColor: Colors.white, // foreground (text) color
+          ),
+          child: Icon(Icons.home),
+        ),
         title: Text("Більше"),
         backgroundColor: Colors.green,
       ),
@@ -67,19 +80,10 @@ class _MoreState extends State<More> {
         },
         separatorBuilder: (context, _) => const SizedBox(height: 10.0),
         itemCount: _controllers.length,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const Homepage(),
-            ),
-          );
-        },
-        backgroundColor: Colors.green,
-        child: Icon(Icons.home),
+
 
       ),
+      backgroundColor: Colors.lightGreenAccent,
     );
   }
 }

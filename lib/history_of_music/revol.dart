@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "package:ukraine_music/homepage.dart";
+import 'package:ukraine_music/history_of_music/homepage_history.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 String text_rev = "Як ми всі знаємо, у 2014 році відбувся Євромайдан.\nЯк ця подія вплинула на українську музику?\n"
@@ -38,6 +38,21 @@ class _RevolutionOfDignityState extends State<RevolutionOfDignity> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: TextButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const Homepage(),
+              ),
+            );
+          },
+          style: TextButton.styleFrom(
+            side: BorderSide(width:1, color:Colors.black45),
+            backgroundColor: Colors.deepPurple, // background (button) color
+            foregroundColor: Colors.white, // foreground (text) color
+          ),
+          child: Icon(Icons.home),
+        ),
         title: Text("Революція гідності"),
         backgroundColor: Colors.deepPurple,
       ),
@@ -116,17 +131,18 @@ class _RevolutionOfDignityState extends State<RevolutionOfDignity> {
       //     ),
       //   ],
       // ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const Homepage(),
-            ),
-          );
-        },
-        backgroundColor: Colors.deepPurple,
-        child: Icon(Icons.home),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.of(context).push(
+      //       MaterialPageRoute(
+      //         builder: (context) => const Homepage(),
+      //       ),
+      //     );
+      //   },
+      //   backgroundColor: Colors.deepPurple,
+      //   child: Icon(Icons.home),
+      // ),
+      // backgroundColor: Colors.deepPurpleAccent,
     );
   }
 }
@@ -195,12 +211,12 @@ class _RevolutionOfDignityTwoState extends State<RevolutionOfDignityTwo> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const RevolutionOfDignity(),
+              builder: (context) => const Homepage(),
             ),
           );
         },
         backgroundColor: Colors.deepPurple,
-        child: Icon(Icons.arrow_circle_left),
+        child: Icon(Icons.home),
 
       ),
     );

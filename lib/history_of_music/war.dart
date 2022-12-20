@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ukraine_music/homepage.dart';
+import 'package:ukraine_music/history_of_music/homepage_history.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 String text_war = "Від початку війни все більше українців відмовляються від російської мови, а також фільмів та музики.\n"
@@ -7,7 +7,7 @@ String text_war = "Від початку війни все більше укра
     "Народ частіше став слухати рідну музику, розмовляти рідною мовою.\n"
     "Ось пісні, які 'вистрельнули' в українському суспільстві: \n"
     "\n"
-    "Співак 'Бумбокс' Андрій Хливнюк зняв відео, як він в військовій формі співає 'Ой у лузі червона калина:'";
+    "Співак 'Бумбокс' Андрій Хливнюк зняв відео, як він в військовій формі співає 'Ой у лузі червона калина':";
 
 List list_war = [
   text_war,
@@ -49,11 +49,25 @@ class _WarOurTimeState extends State<WarOurTime> {
     ),
   ).toList();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: TextButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const Homepage(),
+              ),
+            );
+          },
+          style: TextButton.styleFrom(
+            side: BorderSide(width:1, color:Colors.black45),
+            backgroundColor: Colors.red, // background (button) color
+            foregroundColor: Colors.white, // foreground (text) color
+          ),
+          child: Icon(Icons.home),
+        ),
         title: Text("Війна 2022"),
         backgroundColor: Colors.red,
       ),
@@ -76,19 +90,17 @@ class _WarOurTimeState extends State<WarOurTime> {
         separatorBuilder: (context, _) => const SizedBox(height: 5.0),
         itemCount: list_war.length,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const Homepage(),
-            ),
-          );
-        },
-        backgroundColor: Colors.red,
-        child: Icon(Icons.home),
-
-      ),
-
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.of(context).push(
+      //       MaterialPageRoute(
+      //         builder: (context) => const Homepage(),
+      //       ),
+      //     );
+      //   },
+      //   backgroundColor: Colors.red,
+      //   child: Icon(Icons.home),
+      // ),
     );
   }
 }
