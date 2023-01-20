@@ -12,38 +12,12 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(mainAxisAlignment: MainAxisAlignment.start, children: [Text("Українська музика")]),
+        title: Row(mainAxisAlignment: MainAxisAlignment.start, children: [Padding(padding: EdgeInsets.fromLTRB(40, 0, 0, 0)),Text("Українська музика")]),
         backgroundColor: Colors.blue,
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            SizedBox(
-              height: 63.55,
-              child: DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Меню",
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+        leading: Text(""),
       ),
       body: GridView.count(
         scrollDirection: Axis.vertical,
-        // primary: false,
         padding: EdgeInsets.all(20),
         crossAxisSpacing: 0,
         mainAxisSpacing: 0,
@@ -127,3 +101,63 @@ class Homepage extends StatelessWidget {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// drawer: Drawer(
+//   child: ListView(
+//     children: [
+//       SizedBox(
+//         height: 63.55,
+//         child: DrawerHeader(
+//           decoration: BoxDecoration(
+//             color: Colors.blue,
+//           ),
+//           child: Row(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Text(
+//                 "Меню",
+//                 style: TextStyle(
+//                   fontSize: 25,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     ],
+//   ),
+// ),

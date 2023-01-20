@@ -90,17 +90,6 @@ class _WarOurTimeState extends State<WarOurTime> {
         separatorBuilder: (context, _) => const SizedBox(height: 5.0),
         itemCount: list_war.length,
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     Navigator.of(context).push(
-      //       MaterialPageRoute(
-      //         builder: (context) => const Homepage(),
-      //       ),
-      //     );
-      //   },
-      //   backgroundColor: Colors.red,
-      //   child: Icon(Icons.home),
-      // ),
     );
   }
 }
